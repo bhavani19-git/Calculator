@@ -12,10 +12,11 @@ operator=""
 #clickbut gives a Type error
 def clickbut(number):   #lambda:clickbut(1)
      global operator
-     operator=operator+number
+     operator=str(operator)+str(number)
      textin.set(operator)
 #equlbut gives an UnboundLocal Error
 def equlbut():
+     global operator
      add=str(eval(operator))
      textin.set(add)
      operator=''
