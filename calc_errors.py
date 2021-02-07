@@ -12,17 +12,20 @@ operator=""
 #clickbut gives a Type error
 def clickbut(number):   #lambda:clickbut(1)
      global operator
-     operator=operator+number
+     a=str(number)
+     operator=operator+a
      textin.set(operator)
 #equlbut gives an UnboundLocal Error
 def equlbut():
+     global operator
      add=str(eval(operator))
      textin.set(add)
      operator=''
 
 def clrbut():
-     textin.set('')
-
+     global operator
+     operator=""
+     textin.set(operator)
      
 metext=Entry(me,font=("Courier New",12,'bold'),textvar=textin,width=25,bd=5,bg='powder blue')
 metext.pack()
