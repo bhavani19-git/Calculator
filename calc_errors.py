@@ -11,21 +11,23 @@ textin=StringVar()
 operator=""
 #clickbut gives a Type error
 def clickbut(number):   #lambda:clickbut(1)
-     global operator
-     a=str(number)
-     operator=operator+a
-     textin.set(operator)
+    global operator
+    operator=operator+str(number)
+    textin.set(operator)
+    return
 #equlbut gives an UnboundLocal Error
 def equlbut():
-     global operator
-     add=str(eval(operator))
-     textin.set(add)
-     operator=''
+    add=str(eval(operator))
+    textin.set(add)
+    return
 
 def clrbut():
-     global operator
-     operator=""
-     textin.set(operator)
+    global operator
+    operator = ''
+    textin.set(operator)
+    return
+
+
      
 metext=Entry(me,font=("Courier New",12,'bold'),textvar=textin,width=25,bd=5,bg='powder blue')
 metext.pack()
@@ -75,9 +77,10 @@ butml.place(x=205,y=240)
 butdiv=Button(me,padx=14,pady=14,bd=4,bg='white',text="/",command=lambda:clickbut("/"),font=("Courier New",16,'bold'))
 butdiv.place(x=205,y=310)
 
-butclear=Button(me,padx=14,pady=119,bd=4,bg='white',text="CE",command=clrbut,font=("Courier New",16,'bold'))
+butclear=Button(me,padx=14,pady=119,bd=4,bg='white',text="CE",command = clrbut,font=("Courier New",16,'bold'))
 butclear.place(x=270,y=100)
 
-butequal=Button(me,padx=151,pady=14,bd=4,bg='white',command=equlbut,text="=",font=("Courier New",16,'bold'))
+butequal=Button(me,padx=151,pady=14,bd=4,bg='white',text="=",command=equlbut,font=("Courier New",16,'bold'))
 butequal.place(x=10,y=380)
 me.mainloop()
+
