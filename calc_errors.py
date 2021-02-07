@@ -23,8 +23,9 @@ def equlbut():
      operator=''
 
 def clrbut():
-     textin.set('')
-
+     global operator
+     operator=""
+     textin.set(operator)
      
 metext=Entry(me,font=("Courier New",12,'bold'),textvar=textin,width=25,bd=5,bg='powder blue')
 metext.pack()
