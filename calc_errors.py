@@ -27,6 +27,7 @@ def clrbut():
     textin.set(operator)
     return
 
+
      
 metext=Entry(me,font=("Courier New",12,'bold'),textvar=textin,width=25,bd=5,bg='powder blue')
 metext.pack()
